@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-export type ButtonSize = "small" | "medium" | "large";
-export type ButtonVariant = "primary" | "secondary" | "minimal";
+export type ButtonSize = "small" | "medium" ;
+export type ButtonVariant = "primary" | "minimal";
 export type ButtonState = "enabled" | "disabled";
 
 export type ButtonProps = {

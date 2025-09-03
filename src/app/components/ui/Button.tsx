@@ -20,7 +20,7 @@ import { ButtonProps, ButtonSize, ButtonVariant } from "@/app/types";
 
 
 const Button: React.FC<ButtonProps> = ({
-  size = "medium",
+  size = "small",
   variant = "primary",
   state = "enabled",
   label,
@@ -34,26 +34,24 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
 
   const sizeClasses: Record<ButtonSize, string> = {
-    small: "py-[5px] px-[16px] text-medium-12",
-    medium: "py-[9px] px-[16px] text-medium-12",
-    large: "py-[13px] px-[24px] text-medium-16",
+    small: "py-[8.68px] px-[20.26px] text-body-medium-12",
+    medium: "py-[10.13px] px-[20.26px] text-body-medium-12",
   };
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      "bg-primary text-white  hover:bg-primary-600 active:bg-primary-700 focus:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 disabled:bg-primary/40",
-    secondary:
-      "bg-white text-secondary-400 border border-primary-200 rounded-[60px]  hover:border-secondary-400 hover:text-secondary-500  active:bg-secondary-100 active:border-secondary-200 focus:bg-white focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
+      "bg-primary text-white text-neutral   hover:bg-primary-dark40  focus:bg-primary-dark60 focus:outline-none focus:ring-2 focus:ring-primary-dark40 disabled:bg-primary/40",
     minimal:
-      " bg-transparent  rounded-[60px] text-secondary-300  hover:border-secondary-400 hover:text-secondary-500 hover:bg-white   active:bg-secondary-100 active:border-secondary-200 focus:bg-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-100 focus:text-secondary-400 disabled:bg-white disabled:border-secondary-100 disabled:text-secondary-300",
+      "bg-neutral border border-primary text-primary   disabled:bg-primary/40",
 
   };
 
   const baseClasses =
-    "inline-flex items-center justify-center rounded-[60px]  font-jakarta transition-colors duration-200";
+    "inline-flex items-center justify-center rounded-[41.24px]  font-jakarta transition-colors duration-200";
 
   const isIconOnly = !label && (iconLeft || iconRight);
-  const iconOnlyClasses = isIconOnly ? "p-[12px] w-10 rounded-full h-10" : "";
+  const iconOnlyClasses = isIconOnly && size==="small" ? "p-[8.68px] w-[31.84px]  rounded-full h-10" : 
+  isIconOnly && size==="medium" ? "p-[8.68px] w-[34.73px] rounded-full h-10" : "";
 
   return (
     <motion.button
@@ -70,7 +68,7 @@ const Button: React.FC<ButtonProps> = ({
         baseClasses,
         sizeClasses[size],
         variantClasses[variant],
-        state === "disabled" && "cursor-not-allowed opacity-50",
+        state === "disabled" && "cursor-not-allowed text-neutral-60 bg-neutral-20 ",
         iconOnlyClasses,
         className
       )}
