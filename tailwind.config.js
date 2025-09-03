@@ -13,6 +13,9 @@ const tailwindConfig = {
   ],
   theme: {
     extend: {
+      screens: {
+        '4k': '2560px', 
+      },
       fontFamily: {
         gilroy: ["var(--font-gilroy)", "sans-serif"],
       },

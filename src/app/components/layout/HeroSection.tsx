@@ -17,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative md:max-h-[85vh] xl:max-h-[83vh] overflow-hidden bg-gradient-to-br from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
+    <div className="relative md:max-h-[85vh] xl:max-h-[83vh] 2xl:max-h-[78vh] 4k:max-h-[69vh] overflow-hidden bg-gradient-to-br from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
       {/* Hero Background */}
       <div className="absolute inset-0 ">
         <div className="absolute inset-0 "></div>
@@ -30,7 +30,7 @@ const HeroSection = () => {
       <Navbar />
 
       {/* Hero Content */}
-      <div className="relative     max-w-[1444px]  mx-auto grid grid-rows-2 md:grid-cols-2 z-10   pt-10 px-4 xl:px-0">
+      <div className="relative     max-w-[1444px]  mx-auto md:px-4 grid grid-rows-2 md:grid-cols-2 z-10   pt-10 px-4 xl:px-0">
 
         {/* LEFT CONTENT */}
       <HeroLeft/>
