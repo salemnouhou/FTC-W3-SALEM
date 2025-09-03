@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '../ui/Navbar';
 import HeroRight from './HeroRight';
+import HeroLeft from './HeroLeft';
 
 const HeroSection = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative max-h-[83vh]  overflow-hidden bg-gradient-to-br from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
+    <div className="relative md:max-h-[85vh] xl:max-h-[83vh] overflow-hidden bg-gradient-to-br from-[#FCEED5] via-[#FCEED5] to-[#FFE7BA]">
       {/* Hero Background */}
       <div className="absolute inset-0 ">
         <div className="absolute inset-0 "></div>
@@ -29,47 +30,13 @@ const HeroSection = () => {
       <Navbar />
 
       {/* Hero Content */}
-      <div className="relative bg-red-500   border max-w-[1444px]  mx-auto grid grid-rows-2 md:grid-cols-2 z-10   pt-10 px-4 xl:px-0">
+      <div className="relative     max-w-[1444px]  mx-auto grid grid-rows-2 md:grid-cols-2 z-10   pt-10 px-4 xl:px-0">
 
         {/* LEFT CONTENT */}
-        <div className=" border  h-screen pt-32 ">
-          <h1 className="text-heading-bold-60 text-primary-dark80 font-bold mb-6 leading-tight">
-          One more friend
-            <span className="block text-heading-bold-46 text-primary-dark80 ">
-            Thousands more fun!
-                        </span>
-          </h1>
-
-          <div className='text-start'>
-          <p className="text-body-medium-16 text-neutral-80 mb-12 max-w-3xl">
-          Having a pet means you have more joy, a new friend, a happy <br />
-           person who will always be with you to have fun. We have 200+ <br />
-            different pets that can meet your needs!
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="px-8 py-4 bg-white text-purple-900 font-semibold rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-2xl text-lg">
-              Explorer les Produits
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-purple-900 transition-all duration-300 text-lg">
-              En Savoir Plus
-            </button>
-          </div>
-
-          {/* Hero Stats */}
-         
-        </div>
+      <HeroLeft/>
 
         {/* RIGHT CONTENT */}
         <HeroRight />
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
-        </div>
       </div>
 
       {/* Overlay pour fermer les dropdowns */}

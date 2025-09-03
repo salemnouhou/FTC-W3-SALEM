@@ -3,6 +3,7 @@ import React from "react";
 import clsx from "clsx";
 import { motion } from "motion/react"
 import { ButtonProps, ButtonSize, ButtonVariant } from "@/app/types";
+import Image, { StaticImageData } from "next/image";
 
 /**
  * Composant Button - Bouton personnalisable avec animations
@@ -50,8 +51,8 @@ const Button: React.FC<ButtonProps> = ({
     "inline-flex items-center justify-center rounded-[41.24px]  font-jakarta transition-colors duration-200";
 
   const isIconOnly = !label && (iconLeft || iconRight);
-  const iconOnlyClasses = isIconOnly && size==="small" ? "p-[8.68px] w-[31.84px]  rounded-full h-10" : 
-  isIconOnly && size==="medium" ? "p-[8.68px] w-[34.73px] rounded-full h-10" : "";
+  const iconOnlyClasses = isIconOnly && size === "small" ? "p-[8.68px] w-[31.84px]  rounded-full h-10" :
+    isIconOnly && size === "medium" ? "p-[8.68px] w-[34.73px] rounded-full h-10" : "";
 
   return (
     <motion.button
@@ -75,9 +76,36 @@ const Button: React.FC<ButtonProps> = ({
       onClick={state === "disabled" ? undefined : onClick}
       disabled={state === "disabled"}
     >
-      {iconLeft && <span className={label ? "mr-2" : ""}>{iconLeft}</span>}
+      {/* {iconLeft && <span className={label ? "mr-2" : ""}>{iconLeft}</span>} */}
+      {iconLeft &&
+        (typeof iconLeft === "object" && "src" in iconLeft ? (
+          <Image
+            src={iconLeft as StaticImageData}
+            alt="icon"
+            width={20}
+            height={20}
+            className={label ? "mr-2" : ""}
+          />
+        ) : (
+          <span className={label ? "mr-2" : ""}>{iconLeft}</span>
+        ))}
+
       {label && <span>{label}</span>}
-      {iconRight && <span className={label ? "ml-2" : ""}>{iconRight}</span>}
+      {/* {iconRight && <span className={label ? "ml-2" : ""}>{iconRight}</span>} */}
+      {iconRight &&
+        (typeof iconRight === "object" && "src" in iconRight ? (
+          <Image
+            src={iconRight as StaticImageData}
+            alt="icon right"
+            width={20}
+            height={20}
+            className={label ? "ml-2" : ""}
+          />
+        ) : (
+          <span className={label ? "ml-2" : ""}>
+            {typeof iconRight === "function" ? React.createElement(iconRight) : iconRight}
+          </span>
+        ))}
     </motion.button>
   );
 };
