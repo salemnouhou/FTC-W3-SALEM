@@ -65,7 +65,7 @@ const tailwindConfig = {
         medium: 500,
         bold: 700,
       };
-      const sizes = [8, 10, 12, 14, 16, 20, 24, 28, 36, 46];
+      const sizes = [8, 10, 12, 14, 16, 20, 24, 28, 36, 46, 60];
 
       const utilities = {};
 

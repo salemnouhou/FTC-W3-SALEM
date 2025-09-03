@@ -9,7 +9,7 @@
 // ========================================
 // Composants principaux qui structurent les différentes sections de la page
 export { default as Navbar } from "./ui/Navbar";           // Barre de navigation principale
-export { default as Hero } from "./layout/Hero";
+export { default as HeroSection } from "./layout/HeroSection";
 
 // ========================================
 // COMPOSANTS D'INTERFACE UTILISATEUR (UI)
