@@ -1,0 +1,36 @@
+{
+  "name": "ftc-w3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm install --legacy-peer-deps && next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.542.0",
+    "motion": "^12.23.12",
+    "next": "15.5.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-parallax-tilt": "^1.7.306"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "auto-prefixer": "^0.4.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5"
+  }
+}
