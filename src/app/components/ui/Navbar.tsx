@@ -15,7 +15,7 @@ const Navbar = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);
     const [selectedCurrency, setSelectedCurrency] = useState('VND');
-    const [searchSuggestions, setSearchSuggestions] = useState([]);
+    const [searchSuggestions, setSearchSuggestions] = useState<string[]>([]);
     const currencies = ['VND', 'EUR', 'USD', 'GBP', 'JPY', 'CAD'];
 
 
@@ -45,7 +45,11 @@ const Navbar = () => {
         }
     }, [searchQuery]);
 
-    const handleSearchSubmit = (e) => {
+    interface SearchEvent extends React.SyntheticEvent {
+        preventDefault(): void;
+    }
+
+    const handleSearchSubmit = (e?: SearchEvent): void => {
         if (e) e.preventDefault();
         console.log('Recherche:', searchQuery);
         setIsSearchOpen(false);
@@ -53,12 +57,15 @@ const Navbar = () => {
         setSearchSuggestions([]);
     };
 
-    const selectSuggestion = (suggestion) => {
+    interface SelectSuggestionProps {
+        suggestion: string;
+    }
+
+    const selectSuggestion = ({ suggestion }: SelectSuggestionProps): void => {
         setSearchQuery(suggestion);
         setSearchSuggestions([]);
         console.log('Suggestion sélectionnée:', suggestion);
-    };
-    return (
+    };  return (
         <nav className="relative z-50 px-4 py-4  ">
             <div className="max-w-[1444px] mx-auto">
                 {/* Desktop Navbar */}
@@ -131,7 +138,7 @@ const Navbar = () => {
                                     {searchSuggestions.map((suggestion, index) => (
                                         <button
                                             key={index}
-                                            onClick={() => selectSuggestion(suggestion)}
+                                            onClick={() => selectSuggestion({ suggestion })}
                                             className="w-full px-4 py-3 text-left text-gray-800 hover:bg-gray-100 transition-colors flex items-center space-x-2"
                                         >
                                             <Search className="h-4 w-4 text-gray-400" />
