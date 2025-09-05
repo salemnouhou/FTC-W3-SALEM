@@ -4,6 +4,7 @@ import React from "react";
 import clsx from "clsx";
 import { ImageWithSkeleton } from "./ImageWithSkeleton";
 import { CardProps } from "@/app/types/card";
+import Image from "next/image";
 
 /**
  * Composant Card - Carte polyvalente avec plusieurs variantes
@@ -26,7 +27,7 @@ import { CardProps } from "@/app/types/card";
 
 const Card: React.FC<CardProps> = ({
   variant = "default",
-  image,
+  dogImage,
   title,
   description,
   testimonyTitle,
@@ -37,56 +38,46 @@ const Card: React.FC<CardProps> = ({
   testimonyRole,
   className,
   benefitType,
-  titleDesktop,
 }) => {
   let content;
 
-  if (variant === "testimonial") {
+  if (variant === "dog") {
     content = (
-      <div className="  flex flex-col gap-6 p-6 bg-secondary-500 w-full  rounded-[9.98px] lg:rounded-[12px] ">
-        <span className="text-white">
-          {testimonyTitle}
-        </span>
-        <div className=" md:h-32  xl:hidden">
-          <p className="text-secondary-100 ">
-            {testimonyDescription}
-          </p>
+      <div className=" bg-[#FDFDFD] shadow-[0_4px_28px_-2px_rgba(0,0,0,0.08)] shadow-[[#00000014] flex flex-col py-[16px] px-[8px] bg-secondary-500 w-full  rounded-[12px] lg:rounded-[12px] ">
+
+        <div className="h-[169px]  rounded-[10px] mb-[8px]">
+      <Image
+      src={dogImage || '/placeholder.jpg'}
+      alt="Dog Image"
+      width={300}
+      height={169}
+      className="w-full h-full object-cover rounded-[10px] "
+      />
         </div>
 
-
-        <div className="   h-[125px]   hidden xl:block  ">
-          <p
-            className="text-secondary-100  "
-            dangerouslySetInnerHTML={{ __html: testimonyDescriptionDesktop || "" }}
-          />
-        </div>
-
-
-        <hr className="border-t border-secondary-400/20 " />
-
-        <div>
-          <div className="flex lg:gap-6 items-center gap-4">
-            <div className=" h-[58px] rounded-[10px] w-[58px] lg:h-[70px] lg:w-[70px] ">
-              {testimonyImage && (
-                <ImageWithSkeleton
-                  src={testimonyImage}
-                  alt={testimonyAuthor || "Author"}
-                  width={40}
-                  height={40}
-                  className="w-full h-full rounded-[10px] object-cover"
-                />
-              )}
-            </div>
-            <div className="flex flex-col space-y-[5px]">
-              <span className="text-white font-semibold text-medium-16 lg:text-bold-18">{testimonyAuthor}</span>
-              <span className="text-secondary-200 text-regular-12 lg:text-regular-14">{testimonyRole}</span>
-            </div>
+        <div className="flex flex-col space-y-[8px] mt-2 px-1">
+          <div className="text-body-bold-14 space-y-2 md:space-x-1 text-neutral-100">
+            <span className="block text-body-bold-14 md:inline md:text-body-bold-16">M0231 - Pomeranian</span>
+            <span className="block text-body-bold-14 md:inline">White</span>
+          </div>
+          <div className="space-y-1">
+            <span className="block text-neutral-60 text-body-medium-12">Gender: <span className="text-body-bold-12">Male</span></span>
+            <span className="block text-neutral-60 text-body-medium-12">Age: <span className="text-body-bold-12">02 months</span></span>
+          </div>
+          <div>
+            <span className="text-neutral-100 text-body-bold-16">6.900.000 VND</span>
           </div>
         </div>
 
+
+
+
+
+
+
       </div>
     );
-  } else if (variant === "benefitsOne") {
+  } else if (variant === "product") {
     content = (
       <div>
 
@@ -136,7 +127,7 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
     );
-  } else if (variant === "benefitsTwo") {
+  } else if (variant === "knowledge") {
     content = (
       <div>
         <div className="bg-gray-100  h-[325px] md:h-[307px] relative rounded-[10.16px]  overflow-hidden">
@@ -156,72 +147,6 @@ const Card: React.FC<CardProps> = ({
         </div>
 
 
-      </div>
-    );
-  } else if (variant === "howitworks") {
-    content = (
-      <div className=" flex flex-col items-center">
-
-        <div className="  w-[259px]  h-[258px] sm:h-[200px] sm:w-[200px]  md:h-[225px] md:w-[225px] relative rounded-[10.16px]  ">
-          {image && (
-            <ImageWithSkeleton
-              src={image}
-              alt="title"
-              width={320}
-              height={200}
-              className=" absolute right-5"
-            />
-          )}
-
-
-
-
-
-        </div>
-
-        <div className="mt-4 text-center space-y-4  px-1 rounded-[10.16px]">
-          <span
-            className="lg:hidden text-medium-14 text-white"
-            dangerouslySetInnerHTML={{ __html: title || "" }}
-          />
-          <span
-            className="hidden lg:block text-medium-14 text-white"
-            dangerouslySetInnerHTML={{ __html: titleDesktop || "" }}
-          />
-        </div>
-      </div>
-    );
-  } else if (variant === "howitworksTwo") {
-    content = (
-      <div className=" flex flex-col items-center">
-
-        <div className="  w-[319px]  h-[211px]  relative   ">
-          {image && (
-            <ImageWithSkeleton
-              src={image}
-              alt="title"
-              width={320}
-              height={200}
-              className=" "
-            />
-          )}
-
-
-
-
-
-        </div>
-
-        <div className="mt-4 text-center space-y-4  px-1 rounded-[10.16px]">
-          <span
-            className="lg:hidden text-medium-14 text-white"
-            dangerouslySetInnerHTML={{ __html: title || "" }}
-          />
-          <span
-            className="hidden lg:block text-medium-14 text-white"
-            dangerouslySetInnerHTML={{ __html: titleDesktop || "" }}
-          />
-        </div>
       </div>
     );
   }

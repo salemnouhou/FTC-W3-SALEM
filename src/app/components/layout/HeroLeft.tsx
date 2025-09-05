@@ -4,7 +4,7 @@ import Play from "@/assets/icons/Vector.png"
 
 const HeroLeft = () => {
   return (
-    <div className="  md:px-4  h-full pt-4 md:pt-32  ">
+    <div className="  lg:px-8 xl:px-8 2xl:px-0  h-full pt-4 md:pt-32  ">
       <div className=" relative">
         <div
           style={{ transform: "rotate(25.23deg)" }}

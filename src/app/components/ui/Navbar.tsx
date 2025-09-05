@@ -66,7 +66,7 @@ const Navbar = () => {
         setSearchSuggestions([]);
         console.log('Suggestion sélectionnée:', suggestion);
     };  return (
-        <nav className="relative z-50 px-4 py-4  ">
+        <nav className="relative z-50 px-4 md:px-10  xl:px-8 py-4  ">
             <div className="max-w-[1444px] mx-auto">
                 {/* Desktop Navbar */}
                 <div className="hidden lg:flex items-center justify-between">

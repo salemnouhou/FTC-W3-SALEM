@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "name": "Croquettes Premium",
+      "category": "Food",
+      "price": 50,
+      "image": "/images/products/croquettes.jpg",
+      "sku": "FOOD-001",
+      "stock": 100,
+      "description": "Croquettes de haute qualité pour chiens adultes."
+    },
+    {
+      "id": 2,
+      "name": "Laisse en cuir",
+      "category": "Accessories",
+      "price": 30,
+      "image": "/images/products/laisse.jpg",
+      "sku": "ACC-002",
+      "stock": 50,
+      "description": "Laisse robuste et confortable en cuir véritable."
+    },
+    {
+      "id": 3,
+      "name": "Jouet balle",
+      "category": "Toys",
+      "price": 15,
+      "image": "/images/products/balle.jpg",
+      "sku": "TOY-003",
+      "stock": 200,
+      "description": "Balle interactive résistante pour chiens joueurs."
+    },
+    {
+      "id": 4,
+      "name": "Panier moelleux",
+      "category": "Beds",
+      "price": 80,
+      "image": "/images/products/panier.jpg",
+      "sku": "BED-004",
+      "stock": 20,
+      "description": "Panier ultra confortable pour un sommeil paisible."
+    }
+  ]
+  

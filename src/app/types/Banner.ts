@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 
-export type CardVariant = "dog" | "product" | "knowledge" ;
+export type BannerVariant = "homefirst" | "homesecond" | "category" ;
 
-export interface CardProps {
-  variant?: CardVariant;
+export interface BannerProps {
+  variant?: BannerVariant;
+  homeFirstImage?: string;
   children?: ReactNode;
   dogImage?: string;
   title?: string;
@@ -13,7 +14,6 @@ export interface CardProps {
   benefitType?: string;
   titleDesktop?: string;
   howItWorksType?: string;
-
   testimonyTitle?: string;
   testimonyDescription?: string;
   testimonyDescriptionDesktop?: string;
