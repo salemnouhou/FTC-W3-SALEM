@@ -6,6 +6,8 @@ export interface CardProps {
   variant?: CardVariant;
   children?: ReactNode;
   dogImage?: string;
+  productImage?: string;
+  blogImage?: string;
   title?: string;
   description?: string;
   author?: string;
