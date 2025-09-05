@@ -331,9 +331,9 @@ const Banner: React.FC<BannerProps> = ({
         content = (
             <div>
                 <div className="bg-gray-100  h-[325px] md:h-[307px] relative rounded-[10.16px]  overflow-hidden">
-                    {image && (
+                    {dogImage && (
                         <ImageWithSkeleton
-                            src={image}
+                            src={dogImage}
                             alt="title"
                             width={320}
                             height={200}
